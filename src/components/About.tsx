@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 
@@ -85,15 +84,9 @@ export default function About() {
 
         <div className="about-stats">
           {stats.map((s, i) => (
-            <motion.div
-              key={s.label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08, duration: 0.35 }}
-            >
+            <div key={s.label} className="card-reveal" style={{ transitionDelay: 0.08 * i + 's' }}>
               <FlipCard stat={s.stat} label={s.label} detail={s.detail} />
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

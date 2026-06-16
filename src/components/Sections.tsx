@@ -1,4 +1,3 @@
-import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 
@@ -15,27 +14,23 @@ function FadeInSection({ children, id, className }: { children: React.ReactNode;
 function SectionHeader({ tag, title }: { tag: string; title: React.ReactNode }) {
   return (
     <div className="section-header">
-      <motion.span className="section-tag"
-        initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.25 }}
-      >{tag}</motion.span>
-      <motion.h2 className="section-title"
-        initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.06 }}
-      >{title}</motion.h2>
+      <span className="section-tag">{tag}</span>
+      <h2 className="section-title">{title}</h2>
     </div>
   );
 }
 
 function CertModal({ src, onClose }: { src: string; onClose: () => void }) {
   return (
-    <motion.div className="cert-modal-overlay" onClick={onClose}
-      initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.15 }}
+    <div className="cert-modal-overlay" onClick={onClose}
+      style={{ animation: 'fadeIn 0.2s ease' }}
     >
-      <motion.div className="cert-modal-inner" onClick={e => e.stopPropagation()}
-        initial={{ scale: 0.92 }} animate={{ scale: 1 }} exit={{ scale: 0.92 }} transition={{ duration: 0.2 }}
+      <div className="cert-modal-inner" onClick={e => e.stopPropagation()}
+        style={{ animation: 'scaleUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)' }}
       >
         <img src={src} alt="Certificate" />
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   );
 }
 
@@ -62,10 +57,7 @@ export function Journey() {
       <div className="timeline">
         <div className="timeline-line" />
         {timelineEvents.map((ev, i) => (
-          <motion.div key={i} className="timeline-item"
-            initial={{ opacity: 0, x: -25 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.3, delay: 0.05 * i }}
-          >
+          <div key={i} className="timeline-item card-reveal" style={{ transitionDelay: 0.05 * i + 's' }}>
             <div className="timeline-dot" />
             <div className="timeline-date">{ev.date}</div>
             <div className="timeline-title">
@@ -77,12 +69,12 @@ export function Journey() {
               )}
             </div>
             <div className="timeline-desc">{ev.desc}</div>
-          </motion.div>
+          </div>
         ))}
       </div>
-      <AnimatePresence>
+      
         {certModal && <CertModal src={certModal} onClose={() => setCertModal(null)} />}
-      </AnimatePresence>
+      
     </FadeInSection>
   );
 }
@@ -92,9 +84,7 @@ export function Experience() {
   return (
     <FadeInSection id="experience" className="section">
       <SectionHeader tag="// experience" title={<>Where I've made <span className="highlight">an impact</span></>} />
-      <motion.div className="experience-card"
-        initial={{ opacity: 0, y: 25 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.35 }}
-      >
+      <div className="experience-card card-reveal">
         <div className="exp-header">
           <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
             <img src="/cyberarts-logo.svg" alt="CyberArts" style={{ height: 24, width: 'auto' }} />
@@ -109,7 +99,7 @@ export function Experience() {
         <div className="exp-text">
             <p>CyberArts is a New York-based EdTech startup teaching cybersecurity to high school students through live CTF competitions. I joined as a challenge designer and grew into leading the full technical pipeline, creating 100+ CTF challenges and coaching hundreds of students across the United States.</p>
           </div>
-      </motion.div>
+      </div>
     </FadeInSection>
   );
 }
@@ -128,15 +118,12 @@ export function Projects() {
     <FadeInSection id="projects" className="section">
       <SectionHeader tag="// projects & research" title={<>Things I've <span className="highlight">built</span></>} />
       {projects.map((p, i) => (
-        <motion.div key={i} className="project-card"
-          initial={{ opacity: 0, y: 25 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-          transition={{ duration: 0.3, delay: 0.06 * i }}
-        >
+        <div key={i} className="project-card card-reveal" style={{ transitionDelay: 0.06 * i + 's' }}>
           <div className="project-role">{p.role}</div>
           <div className="project-title">{p.title}</div>
           <div className="project-tags">{p.tags.map(t => <span key={t} className="project-tag">{t}</span>)}</div>
           <div className="project-desc">{p.desc}</div>
-        </motion.div>
+        </div>
       ))}
     </FadeInSection>
   );
@@ -161,19 +148,16 @@ export function Achievements() {
       <SectionHeader tag="// achievements" title={<>Awards & <span className="highlight">recognition</span></>} />
       <div className="achievements-grid">
         {achievements.map((a, i) => (
-          <motion.div key={i} className="achievement-card"
-            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-            transition={{ duration: 0.25, delay: 0.03 * i }}
-          >
+          <div key={i} className="achievement-card card-reveal" style={{ transitionDelay: 0.03 * i + 's' }}>
             <div className="achievement-title">{a.title}</div>
             <div className="achievement-desc">{a.desc}</div>
             {a.rank && <div className="achievement-rank">{a.rank}</div>}
-          </motion.div>
+          </div>
         ))}
       </div>
-      <AnimatePresence>
+      
         {certModal && <CertModal src={certModal} onClose={() => setCertModal(null)} />}
-      </AnimatePresence>
+      
     </FadeInSection>
   );
 }
@@ -190,10 +174,7 @@ export function Skills() {
     <FadeInSection id="skills" className="section">
       <SectionHeader tag="// skills" title={<>Tools of the <span className="highlight">trade</span></>} />
       {skillCategories.map((cat, ci) => (
-        <motion.div key={cat.category} style={{ marginBottom: 20 }}
-          initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-          transition={{ duration: 0.25, delay: 0.03 * ci }}
-        >
+        <div key={cat.category} className="card-reveal" style={{ marginBottom: 20, transitionDelay: 0.03 * ci + 's' }}>
           <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--accent)', marginBottom: 8, fontWeight: 500 }}>
             {cat.category}
           </div>
@@ -202,7 +183,7 @@ export function Skills() {
               <div key={skill} className="skill-item">{skill}</div>
             ))}
           </div>
-        </motion.div>
+        </div>
       ))}
     </FadeInSection>
   );
@@ -213,12 +194,10 @@ export function Education() {
   return (
     <FadeInSection id="education" className="section">
       <SectionHeader tag="// education" title={<>Where I've <span className="highlight">learned</span></>} />
-      <motion.div className="education-card"
-        initial={{ opacity: 0, y: 25 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3 }}
-      >
+      <div className="education-card card-reveal">
         <div className="edu-header">
           <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-            <img src="/imperial-logo.svg" alt="Imperial College London" style={{ height: 32, width: 'auto' }} />
+            <img src="/imperial-logo.svg" alt="Imperial College London" style={{ height: 28, width: 'auto' }} />
             <div>
               <div className="edu-institution">
                 <a href="https://www.imperial.ac.uk/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-primary)', textDecoration: 'none' }}>Imperial College London ↗</a>
@@ -233,11 +212,9 @@ export function Education() {
             <span key={c} className="edu-coursework-tag">{c}</span>
           ))}
         </div>
-      </motion.div>
+      </div>
 
-      <motion.div className="education-card"
-        initial={{ opacity: 0, y: 25 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.08 }}
-      >
+      <div className="education-card card-reveal" style={{ transitionDelay: '0.1s' }}>
         <div className="edu-header">
           <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
             <img src="/srm-logo.png" alt="SRM Institute of Science and Technology" style={{ height: 36, width: 'auto' }} />
@@ -256,7 +233,7 @@ export function Education() {
             <span key={c} className="edu-coursework-tag">{c}</span>
           ))}
         </div>
-      </motion.div>
+      </div>
     </FadeInSection>
   );
 }
@@ -266,9 +243,7 @@ export function Contact() {
   return (
     <FadeInSection id="contact" className="section">
       <SectionHeader tag="// contact" title={<>Let's <span className="highlight">connect</span></>} />
-      <motion.div style={{ textAlign: 'center', maxWidth: 600, margin: '0 auto' }}
-        initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-      >
+      <div className="card-reveal" style={{ textAlign: 'center', maxWidth: 600, margin: '0 auto' }}>
         <p style={{ color: 'var(--text-secondary)', fontSize: '1rem', marginBottom: 32, lineHeight: 1.7 }}>
           Whether you want to collaborate on a CTF, discuss security research, or just say hi - my inbox is always open.
         </p>
@@ -277,7 +252,7 @@ export function Contact() {
           <a href="https://github.com/mk8288" target="_blank" rel="noopener noreferrer" className="btn-secondary">GitHub</a>
           <a href="https://in.linkedin.com/in/mohammad-kaif-50b846266" target="_blank" rel="noopener noreferrer" className="btn-secondary">LinkedIn</a>
         </div>
-      </motion.div>
+      </div>
     </FadeInSection>
   );
 }
