@@ -26,7 +26,7 @@ function CertModal({ src, onClose }: { src: string; onClose: () => void }) {
       style={{ animation: 'fadeIn 0.2s ease' }}
     >
       <div className="cert-modal-inner" onClick={e => e.stopPropagation()}
-        style={{ animation: 'scaleUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)' }}
+        style={{ animation: 'scaleUp 0.25s ease-out' }}
       >
         <img src={src} alt="Certificate" />
       </div>

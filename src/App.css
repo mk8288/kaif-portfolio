@@ -908,35 +908,6 @@
   color: var(--accent);
 }
 
-/* Certificate modal */
-.cert-modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.85);
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  cursor: pointer;
-}
-
-.cert-modal-content {
-  max-width: 90vw;
-  max-height: 90vh;
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-}
-
-.cert-modal-content img {
-  width: 100%;
-  height: auto;
-  max-height: 85vh;
-  object-fit: contain;
-  display: block;
-}
-
 /* ============================================
    SKILLS
    ============================================ */
@@ -1195,7 +1166,7 @@
   to { opacity: 1; }
 }
 @keyframes scaleUp {
-  from { opacity: 0; transform: scale(0.85); }
+  from { opacity: 0; transform: scale(0.9); }
   to { opacity: 1; transform: scale(1); }
 }
 
@@ -1305,6 +1276,9 @@
   .about-grid {
     grid-template-columns: 1fr;
   }
+  .about-stats {
+    overflow: hidden;
+  }
   .achievements-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -1322,6 +1296,13 @@
   .exp-header {
     flex-direction: column;
     gap: 12px;
+  }
+  .exp-header > div:first-child {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .exp-text {
+    font-size: 0.88rem;
   }
   .hero-title {
     font-size: clamp(2rem, 8vw, 2.8rem);
@@ -1351,5 +1332,21 @@
   }
   .stat-number, .flip-card-stat {
     font-size: 1.8rem;
+  }
+  .cert-modal-inner {
+    max-width: 95vw;
+  }
+  .flip-card {
+    height: 120px;
+  }
+  .flip-card-stat {
+    font-size: 1.5rem;
+  }
+  .flip-card-label {
+    font-size: 0.75rem;
+  }
+  .flip-card-back {
+    font-size: 0.72rem;
+    padding: 14px 12px;
   }
 }
