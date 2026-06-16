@@ -2,10 +2,15 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 
 export default function Hero() {
   const { scrollY } = useScroll();
-  const ringRotate = useTransform(scrollY, [0, 600], [0, 180]);
-  const ringRotate2 = useTransform(scrollY, [0, 600], [0, -120]);
-  const ringRotate3 = useTransform(scrollY, [0, 600], [0, 90]);
-  const opacity = useTransform(scrollY, [0, 400], [1, 0]);
+  // Longer fade distance so hero lasts on mobile (800px vs 400px)
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  const fadeDist = isMobile ? 1000 : 600;
+  const ringDist = isMobile ? 1200 : 800;
+  
+  const ringRotate = useTransform(scrollY, [0, ringDist], [0, 180]);
+  const ringRotate2 = useTransform(scrollY, [0, ringDist], [0, -120]);
+  const ringRotate3 = useTransform(scrollY, [0, ringDist], [0, 90]);
+  const opacity = useTransform(scrollY, [0, fadeDist], [1, 0]);
 
   return (
     <section id="home" className="hero">

@@ -1312,6 +1312,20 @@
     flex-direction: column;
     text-align: center;
   }
+  .edu-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .edu-period {
+    align-self: flex-start;
+  }
+  .exp-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .hero-title {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+  }
 }
 
 @media (max-width: 480px) {
@@ -1323,5 +1337,19 @@
   }
   .skills-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .hero-badge {
+    font-size: 0.7rem;
+    padding: 4px 12px;
+  }
+  .btn-primary, .btn-secondary {
+    padding: 10px 20px;
+    font-size: 0.82rem;
+  }
+  .edu-header > div:first-child {
+    flex-wrap: wrap;
+  }
+  .stat-number, .flip-card-stat {
+    font-size: 1.8rem;
   }
 }
