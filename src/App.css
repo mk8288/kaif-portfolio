@@ -494,7 +494,7 @@
    ============================================ */
 .flip-card {
   background: transparent;
-  height: 130px;
+  height: 150px;
   cursor: pointer;
 }
 
@@ -1337,7 +1337,7 @@
     max-width: 95vw;
   }
   .flip-card {
-    height: 120px;
+    height: 140px;
   }
   .flip-card-stat {
     font-size: 1.5rem;
@@ -1346,7 +1346,11 @@
     font-size: 0.75rem;
   }
   .flip-card-back {
-    font-size: 0.72rem;
-    padding: 14px 12px;
+    font-size: 0.65rem;
+    padding: 10px 10px;
+    line-height: 1.4;
+  }
+  .about-stats {
+    gap: 10px;
   }
 }
