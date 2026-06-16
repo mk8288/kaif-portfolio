@@ -36,17 +36,18 @@ function CertModal({ src, onClose }: { src: string; onClose: () => void }) {
 
 /* ---- JOURNEY (Timeline) ---- */
 export function Journey() {
-  const [certModal, setCertModal] = useState<string | null>(null);
   const timelineEvents = [
     { date: '1st Year @ SRMIST', title: 'Thomso RemSkill - IIT Roorkee', desc: "Earned Python Programming Certificate from IIT Roorkee's Thomso event. First steps into programming." },
-    { date: '1st Year @ SRMIST', title: 'NPTEL Elite - C Programming', desc: 'Completed NPTEL course in C Programming through IIT Kanpur with Elite certification (top 5-10% nationwide). NPTEL is India\'s largest online education initiative by the IITs and IISc.', cert: '/assets/certs/NPTEL_-_Introduction_to_programming_in_C-1.png' },
-    { date: '2nd Year @ SRMIST', title: 'HackHound 2.0 - 4th Place', desc: 'Built a 3D object detection system identifying 1,500+ object types in 24 hours. 4th place out of 48 teams (1,100+ participants).', cert: '/assets/hackhound/hackhound-1.png' },
-    { date: '2nd Year @ SRMIST', title: 'HacksCTF - 10th Place', desc: 'First CTF at LNMIIT Jaipur. Ranked 10th overall. This event sparked my cybersecurity obsession.', cert: '/assets/participation/HacksCTF.jpg' },
-    { date: '2nd Year @ SRMIST', title: 'NPTEL Elite - Java', desc: 'Completed NPTEL Elite certification in Java through IIT Kanpur.', cert: '/assets/certs/NPTEL_-_Programming_In_Java-1.png' },
-    { date: '2nd Year @ SRMIST', title: 'NPTEL Elite - Cloud Computing', desc: 'Completed NPTEL Elite certification in Cloud Computing & Distributed Systems through IIT Kanpur.', cert: '/assets/certs/NPTEL_-_Cloud_Computing_and_Distributed_Systems-1.png' },
+    { date: '1st Year @ SRMIST', title: 'NPTEL Elite - C Programming', desc: 'Completed NPTEL course in C Programming through IIT Kanpur with Elite certification (top 5-10% nationwide). NPTEL is India\'s largest online education initiative by the IITs and IISc.' },
+    { date: '2nd Year @ SRMIST', title: 'HackHound 2.0 - 4th Place', desc: 'Built a 3D object detection system identifying 1,500+ object types in 24 hours. 4th place out of 48 teams (1,100+ participants).' },
+    { date: '2nd Year @ SRMIST', title: 'HacksCTF - 10th Place', desc: 'First CTF at LNMIIT Jaipur. Ranked 10th overall. This event sparked my cybersecurity obsession.' },
+    { date: '2nd Year @ SRMIST', title: 'NPTEL Elite - Java', desc: 'Completed NPTEL Elite certification in Java through IIT Kanpur.' },
+    { date: '2nd Year @ SRMIST', title: 'NPTEL Elite - Cloud Computing', desc: 'Completed NPTEL Elite certification in Cloud Computing & Distributed Systems through IIT Kanpur.' },
+    { date: '2nd Year @ SRMIST', title: 'CON-CODE - 4th Place', desc: 'Secured 4th place in this competitive college coding event at SRMIST.' },
+    { date: '2nd Year @ SRMIST', title: 'Codessey - 2nd Place', desc: '2nd place in college-level coding competition at SRMIST.' },
     { date: '3rd Year @ SRMIST', title: 'POCTF - #29 Globally', desc: '3-month CTF by Prof. Chad Johnson (UW Madison). Ranked 29th worldwide. Deeply shaped my offensive security skills.' },
-    { date: '3rd Year @ SRMIST', title: 'Organized HackTheFlag', desc: 'Led a 24-hour college CTF. 150+ registrations, 20+ custom challenges on Azure. Mitigated a live DDoS attack via Cloudflare.', cert: '/assets/organizing/hackTheFlag.png' },
-    { date: '3rd Year @ SRMIST', title: 'Organized AutoCoder Competition', desc: 'Organized a college-level coding competition at SRMIST, managing participants, challenges, and event logistics.', cert: '/assets/organizing/AutoCoder.png' },
+    { date: '3rd Year @ SRMIST', title: 'Organized HackTheFlag', desc: 'Led a 24-hour college CTF. 150+ registrations, 20+ custom challenges on Azure. Mitigated a live DDoS attack via Cloudflare.' },
+    { date: '3rd Year @ SRMIST', title: 'Organized AutoCoder Competition', desc: 'Organized a college-level coding competition at SRMIST, managing participants, challenges, and event logistics.' },
     { date: '3rd Year @ SRMIST', title: 'Ethical Hacking Workshop - IIT Delhi', desc: 'Hands-on workshop on WPA2 Wi-Fi auditing with Aircrack-ng, packet capture analysis, and wireless security assessments led by Mohsin Quresh.' },
     { date: 'Nov 2024 - Present', title: 'Technical Operations @ CyberArts', desc: '100+ CTF challenges for a NY EdTech startup. Coached US students, onboarded 200+ participants, boosted engagement by 10%.' },
     { date: 'Sep 2026 - Sep 2027', title: 'MSc @ Imperial College London', desc: 'MSc Security and Resilience: Science and Technology. Cyber-Physical Systems Security, CBRNE, Infrastructure Security.' },
@@ -60,21 +61,11 @@ export function Journey() {
           <div key={i} className="timeline-item card-reveal" style={{ transitionDelay: 0.05 * i + 's' }}>
             <div className="timeline-dot" />
             <div className="timeline-date">{ev.date}</div>
-            <div className="timeline-title">
-              {ev.title}
-              {ev.cert && (
-                <span className="cert-toggle" style={{ marginLeft: 10, fontSize: '0.7rem', padding: '2px 8px', verticalAlign: 'middle' }}
-                  onClick={(e) => { e.stopPropagation(); setCertModal(ev.cert!); }}
-                >view cert</span>
-              )}
-            </div>
+            <div className="timeline-title">{ev.title}</div>
             <div className="timeline-desc">{ev.desc}</div>
           </div>
         ))}
       </div>
-      
-        {certModal && <CertModal src={certModal} onClose={() => setCertModal(null)} />}
-      
     </FadeInSection>
   );
 }
@@ -95,7 +86,6 @@ export function Experience() {
           </div>
           <div className="exp-period">Nov 2024 - Present</div>
         </div>
-
         <div className="exp-text">
             <p>CyberArts is a New York-based EdTech startup teaching cybersecurity to high school students through live CTF competitions. I joined as a challenge designer and grew into leading the full technical pipeline, creating 100+ CTF challenges and coaching hundreds of students across the United States.</p>
           </div>
@@ -133,12 +123,14 @@ export function Projects() {
 export function Achievements() {
   const [certModal, setCertModal] = useState<string | null>(null);
   const achievements = [
-    { title: 'HackHound 2.0', desc: 'Secured 4th position out of 48 teams (1,100+ participants). Built a 3D object detection system in 24 hours.', rank: '4th of 48 Teams' },
+    { title: 'HackHound 2.0', desc: 'Secured 4th position out of 48 teams (1,100+ participants). Built a 3D object detection system in 24 hours.', rank: '4th of 48 Teams', cert: '/assets/hackhound/hackhound-1.png' },
     { title: 'POCTF 24', desc: 'Ranked #29 globally in a 3-month CTF by Prof. Chad Johnson, University of Wisconsin - Madison.', rank: '#29 Worldwide' },
-    { title: 'HacksCTF', desc: 'Placed 10th overall at LNMIIT Jaipur. My first CTF that ignited my cybersecurity journey.', rank: '10th Overall' },
+    { title: 'HacksCTF', desc: 'Placed 10th overall at LNMIIT Jaipur. My first CTF that ignited my cybersecurity journey.', rank: '10th Overall', cert: '/assets/participation/HacksCTF.jpg' },
     { title: 'CON-CODE @ SRMIST', desc: '4th place in competitive college coding event.', rank: '4th Place' },
     { title: 'Codessey @ SRMIST', desc: '2nd place in college-level coding competition.', rank: '2nd Place' },
-    { title: 'NPTEL Elite Certifications', desc: 'Elite certifications (top 5-10%) in C Programming, Java, and Cloud Computing & Distributed Systems through NPTEL by IIT Kanpur and IISc. NPTEL is India\'s largest open online education initiative.', rank: '3x Elite' },
+    { title: 'NPTEL Elite Certifications', desc: 'Elite certifications (top 5-10%) in C Programming, Java, and Cloud Computing & Distributed Systems through NPTEL by IIT Kanpur and IISc.', rank: '3x Elite', certs: ['/assets/certs/NPTEL_-_Introduction_to_programming_in_C-1.png', '/assets/certs/NPTEL_-_Programming_In_Java-1.png', '/assets/certs/NPTEL_-_Cloud_Computing_and_Distributed_Systems-1.png'] },
+    { title: 'HackTheFlag - Organizer', desc: 'Organized a 24-hour college CTF. 150+ registrations, 20+ custom challenges. Mitigated a live DDoS attack.', rank: 'SRMIST', cert: '/assets/organizing/hackTheFlag.png' },
+    { title: 'AutoCoder - Organizer', desc: 'Organized a college-level coding competition at SRMIST.', rank: 'SRMIST', cert: '/assets/organizing/AutoCoder.png' },
     { title: 'Ethical Hacking Workshop at IIT Delhi', desc: 'Hands-on WPA2 Wi-Fi auditing with Aircrack-ng, packet capture analysis, and wireless security assessments. Led by Mohsin Quresh.', rank: 'IIT Delhi' },
     { title: 'Python @ IIT Roorkee', desc: 'Thomso RemSkill Python Programming Certificate from IIT Roorkee.', rank: 'IIT Roorkee' },
   ];
@@ -151,13 +143,21 @@ export function Achievements() {
           <div key={i} className="achievement-card card-reveal" style={{ transitionDelay: 0.03 * i + 's' }}>
             <div className="achievement-title">{a.title}</div>
             <div className="achievement-desc">{a.desc}</div>
-            {a.rank && <div className="achievement-rank">{a.rank}</div>}
+            <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginTop: 10, alignItems: 'center' }}>
+              {a.rank && <div className="achievement-rank">{a.rank}</div>}
+              {a.cert && (
+                <span className="cert-toggle" onClick={() => setCertModal(a.cert!)}>view cert</span>
+              )}
+              {a.certs && a.certs.map((c, ci) => (
+                <span key={ci} className="cert-toggle" onClick={() => setCertModal(c)}>
+                  {['C Programming', 'Java', 'Cloud Computing'][ci] || 'cert'}
+                </span>
+              ))}
+            </div>
           </div>
         ))}
       </div>
-      
-        {certModal && <CertModal src={certModal} onClose={() => setCertModal(null)} />}
-      
+      {certModal && <CertModal src={certModal} onClose={() => setCertModal(null)} />}
     </FadeInSection>
   );
 }
