@@ -8,6 +8,7 @@ const navItems = [
   { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
   { label: 'Skills', href: '#skills' },
+  { label: 'Education', href: '#education' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -33,7 +34,7 @@ export default function Navbar({ theme, toggleTheme, currentAccent, cycleColor }
       className="navbar"
       initial={{ y: -80 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
       style={{
         borderBottom: scrolled ? '1px solid var(--border)' : '1px solid transparent',
       }}
@@ -50,7 +51,7 @@ export default function Navbar({ theme, toggleTheme, currentAccent, cycleColor }
               key={item.href}
               initial={{ opacity: 0, y: -12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 + i * 0.05 }}
+              transition={{ delay: 0.05 + i * 0.04 }}
             >
               <a href={item.href} onClick={() => setMobileOpen(false)}>
                 {item.label}
@@ -60,7 +61,6 @@ export default function Navbar({ theme, toggleTheme, currentAccent, cycleColor }
         </ul>
 
         <div className="navbar-right">
-          {/* Color accent cycle button */}
           <button
             className="theme-toggle"
             onClick={cycleColor}
@@ -70,16 +70,15 @@ export default function Navbar({ theme, toggleTheme, currentAccent, cycleColor }
               background: `${currentAccent.hex}22`,
               borderColor: currentAccent.hex,
               color: currentAccent.hex,
-              fontSize: '0.7rem',
+              fontSize: '0.65rem',
               fontWeight: 600,
-              width: 48,
+              width: 44,
               letterSpacing: '0.05em',
             }}
           >
             {currentAccent.name}
           </button>
 
-          {/* Dark/Light toggle */}
           <button
             className="theme-toggle"
             onClick={toggleTheme}

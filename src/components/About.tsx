@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 function SectionHeader({ tag, title }: { tag: string; title: React.ReactNode }) {
   return (
@@ -16,25 +16,45 @@ function FadeInSection({ children, id, className }: { children: React.ReactNode;
   const isInView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <motion.section
+    <section
       id={id}
       ref={ref}
-      className={className}
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      className={`${className || ''} fade-section${isInView ? ' visible' : ''}`}
     >
       {children}
-    </motion.section>
+    </section>
+  );
+}
+
+function FlipCard({ stat, label, detail }: { stat: string; label: string; detail: string }) {
+  const [flipped, setFlipped] = useState(false);
+
+  return (
+    <div
+      className={`flip-card ${flipped ? 'flipped' : ''}`}
+      onClick={() => setFlipped(!flipped)}
+      onMouseEnter={() => setFlipped(true)}
+      onMouseLeave={() => setFlipped(false)}
+    >
+      <div className="flip-card-inner">
+        <div className="flip-card-front">
+          <div className="flip-card-stat">{stat}</div>
+          <div className="flip-card-label">{label}</div>
+        </div>
+        <div className="flip-card-back">
+          <p>{detail}</p>
+        </div>
+      </div>
+    </div>
   );
 }
 
 export default function About() {
   const stats = [
-    { number: '+100', label: 'CTF Challenges Built', icon: '🏴' },
-    { number: '#29', label: 'Global POCTF Rank', icon: '🌍' },
-    { number: '9.04', label: 'B.Tech CGPA', icon: '🎓' },
-    { number: '2+', label: 'Years Experience', icon: '⚡' },
+    { stat: '100+', label: 'CTF Challenges Built', detail: 'Designed and developed over 100 Capture The Flag challenges spanning reverse engineering, forensics, web exploitation, cryptography, and OSINT for CyberArts.' },
+    { stat: '#29', label: 'Global POCTF Rank', detail: 'Ranked 29th worldwide in POCTF 24 - a 3-month competitive CTF organized by Prof. Chad Johnson at the University of Wisconsin-Madison.' },
+    { stat: '9.04', label: 'B.Tech CGPA', detail: 'Graduated with a 9.04/10 CGPA from SRM Institute of Science and Technology in Computer Science with Cloud Computing specialization.' },
+    { stat: '2+', label: 'Years Experience', detail: 'Over 2 years of professional experience in cybersecurity - designing CTFs, mentoring students, and building defensive infrastructure.' },
   ];
 
   return (
@@ -64,18 +84,15 @@ export default function About() {
         </div>
 
         <div className="about-stats">
-          {stats.map((stat, i) => (
+          {stats.map((s, i) => (
             <motion.div
-              key={stat.label}
-              className="stat-card"
+              key={s.label}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
+              transition={{ delay: i * 0.08, duration: 0.35 }}
             >
-              <div className="stat-icon">{stat.icon}</div>
-              <div className="stat-number">{stat.number}</div>
-              <div className="stat-label">{stat.label}</div>
+              <FlipCard stat={s.stat} label={s.label} detail={s.detail} />
             </motion.div>
           ))}
         </div>

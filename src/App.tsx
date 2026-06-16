@@ -15,12 +15,12 @@ import {
 import './App.css';
 
 const ACCENTS = [
-  { name: 'Red', hex: '#dc2626' },
-  { name: 'Green', hex: '#16a34a' },
-  { name: 'Blue', hex: '#2563eb' },
-  { name: 'Orange', hex: '#ea580c' },
-  { name: 'Purple', hex: '#9333ea' },
-  { name: 'White', hex: '#e8e8e8' },
+  { name: 'Red', hex: '#dc2626', id: 'red' },
+  { name: 'Green', hex: '#16a34a', id: 'green' },
+  { name: 'Blue', hex: '#2563eb', id: 'blue' },
+  { name: 'Orange', hex: '#ea580c', id: 'orange' },
+  { name: 'Purple', hex: '#9333ea', id: 'purple' },
+  { name: 'White', hex: '#e8e8e8', id: 'white' },
 ];
 
 function App() {
@@ -32,22 +32,7 @@ function App() {
   }, [theme]);
 
   useEffect(() => {
-    const accent = ACCENTS[colorIdx];
-    // Only apply the accent color — pure white stays neutral for dark
-    if (accent.name === 'White') {
-      document.documentElement.style.setProperty('--accent', '#e8e8e8');
-      document.documentElement.style.setProperty('--accent-light', '#ffffff');
-      document.documentElement.style.setProperty('--accent-glow', 'rgba(232, 232, 232, 0.25)');
-      document.documentElement.style.setProperty('--accent-muted', 'rgba(232, 232, 232, 0.10)');
-    } else {
-      const r = parseInt(accent.hex.slice(1,3), 16);
-      const g = parseInt(accent.hex.slice(3,5), 16);
-      const b = parseInt(accent.hex.slice(5,7), 16);
-      document.documentElement.style.setProperty('--accent', accent.hex);
-      document.documentElement.style.setProperty('--accent-light', `rgb(${Math.min(255,r+40)},${Math.min(255,g+40)},${Math.min(255,b+40)})`);
-      document.documentElement.style.setProperty('--accent-glow', `rgba(${r},${g},${b},0.25)`);
-      document.documentElement.style.setProperty('--accent-muted', `rgba(${r},${g},${b},0.10)`);
-    }
+    document.documentElement.setAttribute('data-accent', ACCENTS[colorIdx].id);
   }, [colorIdx]);
 
   const toggleTheme = () => {

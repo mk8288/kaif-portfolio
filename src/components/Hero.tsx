@@ -9,18 +9,16 @@ export default function Hero() {
 
   return (
     <section id="home" className="hero">
-      {/* Background gradients */}
       <div className="hero-gradient-1" />
       <div className="hero-gradient-2" />
 
       <motion.div className="hero-grid" style={{ opacity }}>
-        {/* Left: Text */}
         <div className="hero-content">
           <motion.div
             className="hero-badge"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.15 }}
           >
             <span className="dot" />
             Open to Opportunities · Imperial College London '27
@@ -30,7 +28,7 @@ export default function Hero() {
             className="hero-title"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
           >
             Hi, I'm{' '}
             <span className="accent">Mohammad Kaif</span>
@@ -43,9 +41,9 @@ export default function Hero() {
             className="hero-subtitle"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
+            transition={{ duration: 0.4, delay: 0.35 }}
           >
-            B.Tech CS (SRMIST, 9.04 CGPA) → MSc Security & Resilience
+            B.Tech CSE (SRMIST, 9.04 CGPA) → MSc Security & Resilience
             at Imperial College London. Built 100+ CTF challenges, ranked
             29th globally in POCTF, and stopped a million-request DDoS
             attack in its tracks.
@@ -55,7 +53,7 @@ export default function Hero() {
             className="hero-actions"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
+            transition={{ duration: 0.4, delay: 0.5 }}
           >
             <a href="#experience" className="btn-primary">
               See My Work ↓
@@ -66,15 +64,13 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Right: Photo with orbiting rings */}
         <div className="hero-visual">
           <motion.div
             className="photo-container"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           >
-            {/* Orbiting rings */}
             <motion.div
               className="orbit-ring orbit-ring-1"
               style={{ rotate: ringRotate }}
@@ -109,60 +105,12 @@ export default function Hero() {
               />
             </motion.div>
 
-            {/* Photo frame */}
             <motion.div
               className="photo-frame"
               whileHover={{ scale: 1.03 }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.2 }}
             >
               <img src="/kaif-profile.png" alt="Mohammad Kaif" />
-            </motion.div>
-
-            {/* Small floating badges */}
-            <motion.div
-              style={{
-                position: 'absolute',
-                top: '8%',
-                right: '-8%',
-                background: 'var(--bg-card)',
-                border: '1px solid var(--border)',
-                borderRadius: '12px',
-                padding: '8px 14px',
-                fontSize: '0.75rem',
-                fontWeight: 600,
-                zIndex: 10,
-                display: 'flex',
-                alignItems: 'center',
-                gap: 6,
-              }}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1.2, duration: 0.5 }}
-            >
-              <span style={{ color: 'var(--accent)' }}>✦</span> Top 4% Globally
-            </motion.div>
-
-            <motion.div
-              style={{
-                position: 'absolute',
-                bottom: '12%',
-                left: '-10%',
-                background: 'var(--bg-card)',
-                border: '1px solid var(--border)',
-                borderRadius: '12px',
-                padding: '8px 14px',
-                fontSize: '0.75rem',
-                fontWeight: 600,
-                zIndex: 10,
-                display: 'flex',
-                alignItems: 'center',
-                gap: 6,
-              }}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1.4, duration: 0.5 }}
-            >
-              <span style={{ color: 'var(--accent)' }}>⚡</span> 100+ CTF Challenges
             </motion.div>
           </motion.div>
         </div>
