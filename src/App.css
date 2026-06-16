@@ -1299,7 +1299,8 @@
     font-size: 0.88rem;
   }
   .hero-title {
-    font-size: clamp(2rem, 8vw, 2.8rem);
+    font-size: clamp(1.6rem, 6vw, 2.8rem);
+    word-break: keep-all;
   }
 }
 
@@ -1320,6 +1321,9 @@
   .btn-primary, .btn-secondary {
     padding: 10px 20px;
     font-size: 0.82rem;
+  }
+  .hero-title {
+    font-size: clamp(1.4rem, 5.5vw, 2rem);
   }
   .edu-header > div:first-child {
     flex-wrap: wrap;
