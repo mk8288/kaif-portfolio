@@ -48,10 +48,10 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.35 }}
           >
-            B.Tech CSE (SRMIST, 9.04 CGPA) → MSc Security & Resilience
-            at Imperial College London. Built 100+ CTF challenges, ranked
-            29th globally in POCTF, and stopped a million-request DDoS
-            attack in its tracks.
+            Heading to <span className="accent">Imperial College London</span> for MSc Security & Resilience.
+            Built 100+ CTF challenges at CyberArts, ranked 29th globally in POCTF,
+            and stopped a million-request DDoS attack in its tracks.
+            B.Tech CSE from SRMIST (9.04 CGPA).
           </motion.p>
 
           <motion.div
