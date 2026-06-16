@@ -22,12 +22,8 @@ function SectionHeader({ tag, title }: { tag: string; title: React.ReactNode }) 
 
 function CertModal({ src, onClose }: { src: string; onClose: () => void }) {
   return (
-    <div className="cert-modal-overlay" onClick={onClose}
-      style={{ animation: 'fadeIn 0.2s ease' }}
-    >
-      <div className="cert-modal-inner" onClick={e => e.stopPropagation()}
-        style={{ animation: 'scaleUp 0.25s ease-out' }}
-      >
+    <div className="cert-modal-overlay" onClick={onClose}>
+      <div className="cert-modal-inner" onClick={e => e.stopPropagation()}>
         <img src={src} alt="Certificate" />
       </div>
     </div>
