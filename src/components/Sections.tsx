@@ -196,7 +196,7 @@ export function Education() {
             <img src="/imperial-logo.svg" alt="Imperial College London" style={{ height: 28, width: 'auto' }} />
             <div>
               <div className="edu-institution">
-                <a href="https://www.imperial.ac.uk/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-primary)', textDecoration: 'none' }}>Imperial College London ↗</a>
+                <a href="https://www.imperial.ac.uk/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-light)', textDecoration: 'none', fontWeight: 700 }}>Imperial College London ↗</a>
               </div>
               <div className="edu-degree">MSc Security and Resilience: Science and Technology</div>
             </div>
