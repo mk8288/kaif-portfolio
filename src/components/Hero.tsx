@@ -115,7 +115,7 @@ export default function Hero() {
               whileHover={{ scale: 1.03 }}
               transition={{ duration: 0.2 }}
             >
-              <img src="/kaif-profile.png" alt="Mohammad Kaif" />
+              <img src="/kaif-profile.png?v=6ee964fdc962" alt="Mohammad Kaif" />
             </motion.div>
           </motion.div>
         </div>
