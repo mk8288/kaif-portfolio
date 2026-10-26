@@ -48,7 +48,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.35 }}
           >
-            Heading to <span className="accent">Imperial College London</span> for MSc Security & Resilience.
+            Studying MSc Security & Resilience at <span className="accent">Imperial College London</span>.
             Built 100+ CTF challenges at CyberArts, ranked 29th globally in POCTF,
             and stopped a million-request DDoS attack in its tracks.
             B.Tech CSE from SRMIST (9.04 CGPA).

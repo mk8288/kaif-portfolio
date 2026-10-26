@@ -46,7 +46,7 @@ export function Journey() {
     { date: '3rd Year @ SRMIST', title: 'Organized AutoCoder Competition', desc: 'Organized a college-level coding competition at SRMIST, managing participants, challenges, and event logistics.' },
     { date: '3rd Year @ SRMIST', title: 'Ethical Hacking Workshop - IIT Delhi', desc: 'Hands-on workshop on WPA2 Wi-Fi auditing with Aircrack-ng, packet capture analysis, and wireless security assessments led by Mohsin Quresh.' },
     { date: 'Nov 2024 - Present', title: 'Technical Operations @ CyberArts', desc: '100+ CTF challenges for a NY EdTech startup. Coached US students, onboarded 200+ participants, boosted engagement by 10%.' },
-    { date: 'Sep 2026 - Sep 2027', title: 'MSc @ Imperial College London', desc: 'MSc Security and Resilience: Science and Technology. Cyber-Physical Systems Security, CBRNE, Infrastructure Security.' },
+    { date: 'Sep 2026 - Sep 2027', title: 'MSc @ Imperial College London', desc: 'Studying Security and Resilience: Science and Technology. Class representative and CyberSoc member, with ongoing cybersecurity practice on HackTheBox.' },
   ];
   return (
     <FadeInSection id="journey" className="section">
@@ -165,6 +165,7 @@ export function Skills() {
     { category: 'Security Tools', items: ['Wireshark', 'Burp Suite', 'Ghidra', 'Autopsy', 'theHarvester', 'CTFd', 'ADB', 'Aircrack-ng'] },
     { category: 'Cloud & Infra', items: ['Docker', 'Kubernetes', 'Azure', 'Cloudflare', 'Linux'] },
     { category: 'Frameworks', items: ['Node.js', 'React', 'Flask', 'Git', 'GitHub', 'GitLab'] },
+    { category: 'Practical Training', items: ['HackTheBox'] },
   ];
   return (
     <FadeInSection id="skills" className="section">
@@ -201,8 +202,9 @@ export function Education() {
               <div className="edu-degree">MSc Security and Resilience: Science and Technology</div>
             </div>
           </div>
-          <div className="edu-period">Sep 2026 - Sep 2027</div>
+          <div className="edu-period">Sep 2026 - Sep 2027 (expected)</div>
         </div>
+        <p className="project-desc">Current MSc student · Class Representative · CyberSoc Member</p>
         <div className="edu-coursework">
           {['Key Concepts: Security in Context', 'Behavioural Science and Security', 'CBRNE: The Physical Threat Space', 'Infrastructure and Transport Security', 'Behavioural Research Methods', 'Cyber-Physical Systems Security', 'Sensors: Electronic and Natural'].map(c => (
             <span key={c} className="edu-coursework-tag">{c}</span>

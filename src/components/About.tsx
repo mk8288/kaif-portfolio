@@ -76,9 +76,10 @@ export default function About() {
             POCTF (29th globally) to organizing my own event, hackTheFlag.
           </p>
           <p>
-            I'll be pursuing my MSc in Security and Resilience: Science and Technology at
-            Imperial College London starting Fall 2026, where I'll dive deeper into
-            cyber-physical systems, behavioral security, and infrastructure protection.
+            I'm studying MSc Security and Resilience: Science and Technology at Imperial
+            College London, where I'm a class representative and a member of CyberSoc.
+            Alongside my coursework in cyber-physical systems, behavioural security, and
+            infrastructure protection, I practise cybersecurity on HackTheBox.
           </p>
         </div>
 
