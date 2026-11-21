@@ -49,9 +49,9 @@ export default function Hero() {
             transition={{ duration: 0.4, delay: 0.35 }}
           >
             Studying MSc Security & Resilience at <span className="accent">Imperial College London</span>.
-            Built 100+ CTF challenges at CyberArts, ranked 29th globally in POCTF,
-            and stopped a million-request DDoS attack in its tracks.
-            B.Tech CSE from SRMIST (9.04 CGPA).
+            Created 200+ CTF challenges at CyberArts and supported live competition infrastructure.
+            Experience with Splunk, Wazuh and Microsoft Sentinel, alongside ongoing
+            OSCP-oriented Active Directory lab practice. Seeking graduate security engineering opportunities.
           </motion.p>
 
           <motion.div

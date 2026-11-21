@@ -62,12 +62,12 @@ function App() {
       />
       <Hero />
       <About />
+      <Education />
       <Journey />
       <Experience />
       <Projects />
       <Achievements />
       <Skills />
-      <Education />
       <Contact />
       <Footer />
     </div>

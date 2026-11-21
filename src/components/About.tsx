@@ -50,10 +50,10 @@ function FlipCard({ stat, label, detail }: { stat: string; label: string; detail
 
 export default function About() {
   const stats = [
-    { stat: '100+', label: 'CTF Challenges Built', detail: 'Designed and developed over 100 Capture The Flag challenges spanning reverse engineering, forensics, web exploitation, cryptography, and OSINT for CyberArts.' },
+    { stat: '200+', label: 'CTF Challenges Built', detail: 'Designed and developed 200+ Capture The Flag challenges spanning reverse engineering, forensics, web exploitation, cryptography, and OSINT for CyberArts.' },
     { stat: '#29', label: 'Global POCTF Rank', detail: 'Ranked 29th worldwide in POCTF 24 - a 3-month competitive CTF organized by Prof. Chad Johnson at the University of Wisconsin-Madison.' },
     { stat: '9.04', label: 'B.Tech CGPA', detail: 'Graduated with a 9.04/10 CGPA from SRM Institute of Science and Technology in Computer Science with Cloud Computing specialization.' },
-    { stat: '2+', label: 'Years Experience', detail: 'Over 2 years of professional experience in cybersecurity - designing CTFs, mentoring students, and building defensive infrastructure.' },
+    { stat: '4', label: 'Student Cohorts Supported', detail: 'Coached four US student cohorts at CyberArts, alongside student onboarding, platform troubleshooting and challenge development.' },
   ];
 
   return (
@@ -63,23 +63,23 @@ export default function About() {
       <div className="about-grid">
         <div className="about-text">
           <p>
-            I'm Mohammad Kaif, a cybersecurity engineer and CTF creator passionate about
-            the intersection of offensive security, AI, and infrastructure defense. I
-            recently graduated with a B.Tech in Computer Science (Cloud Computing) from
+            I'm Mohammad Kaif, an MSc student working towards a career in security engineering,
+            with experience in CTF development, security monitoring tools and competition
+            infrastructure. I graduated with a B.Tech in Computer Science (Cloud Computing) from
             SRM Institute of Science and Technology with a CGPA of 9.04/10.
           </p>
           <p>
-            Over the past two years, I've designed over 100 capture-the-flag challenges
-            for CyberArts, a New York-based EdTech startup, where I also coached students
-            across the US and helped drive a 10% increase in engagement. My competitive
-            CTF journey has taken me from HackHound (4th place, 1,100 participants) to
-            POCTF (29th globally) to organizing my own event, hackTheFlag.
+            At CyberArts, I created 200+ capture-the-flag challenges, coached four US student
+            cohorts and worked with the founder on teaching materials. I now teach coding
+            and Sphero robotics at Code Kids, coordinating with fellow instructors on
+            classroom delivery. My security experience includes Splunk, Wazuh and Microsoft Sentinel.
           </p>
           <p>
             I'm studying MSc Security and Resilience: Science and Technology at Imperial
-            College London, where I'm a class representative and a member of CyberSoc.
-            Alongside my coursework in cyber-physical systems, behavioural security, and
-            infrastructure protection, I practise cybersecurity on HackTheBox.
+            College London. As class representative, I raise peers' coursework questions
+            with professors and relay clarifications to the cohort. I also contribute CTF
+            challenges to Imperial CyberSoc and practise penetration testing on HackTheBox,
+            including OSCP-oriented Active Directory lab methods.
           </p>
         </div>
 

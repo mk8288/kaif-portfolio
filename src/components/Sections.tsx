@@ -45,8 +45,9 @@ export function Journey() {
     { date: '3rd Year @ SRMIST', title: 'Organized HackTheFlag', desc: 'Led a 24-hour college CTF. 150+ registrations, 20+ custom challenges on Azure. Mitigated a live DDoS attack via Cloudflare.' },
     { date: '3rd Year @ SRMIST', title: 'Organized AutoCoder Competition', desc: 'Organized a college-level coding competition at SRMIST, managing participants, challenges, and event logistics.' },
     { date: '3rd Year @ SRMIST', title: 'Ethical Hacking Workshop - IIT Delhi', desc: 'Hands-on workshop on WPA2 Wi-Fi auditing with Aircrack-ng, packet capture analysis, and wireless security assessments led by Mohsin Quresh.' },
-    { date: 'Nov 2024 - Present', title: 'Technical Operations @ CyberArts', desc: '100+ CTF challenges for a NY EdTech startup. Coached US students, onboarded 200+ participants, boosted engagement by 10%.' },
-    { date: 'Sep 2026 - Sep 2027', title: 'MSc @ Imperial College London', desc: 'Studying Security and Resilience: Science and Technology. Class representative and CyberSoc member, with ongoing cybersecurity practice on HackTheBox.' },
+    { date: 'Nov 2024 - Sep 2026', title: 'Technical Operations @ CyberArts', desc: 'Created 200+ CTF challenges, coached four US student cohorts and onboarded 200+ students. Collaborated with the founder on teaching materials and course delivery.' },
+    { date: 'Sep 2026 - Sep 2027', title: 'MSc @ Imperial College London', desc: 'Studying Security and Resilience: Science and Technology. Represent peers by raising coursework questions with professors and contribute CTF challenges to Imperial CyberSoc.' },
+    { date: 'Oct 2026 - Present', title: 'Part-time Instructor @ Code Kids', desc: 'Teach children aged 8–12 through coding and Sphero robotics projects. Coordinate with fellow instructors on classroom activities. Expected to help architect a planned cybersecurity course.' },
   ];
   return (
     <FadeInSection id="journey" className="section">
@@ -71,6 +72,24 @@ export function Experience() {
   return (
     <FadeInSection id="experience" className="section">
       <SectionHeader tag="// experience" title={<>Where I've made <span className="highlight">an impact</span></>} />
+      <div className="experience-card card-reveal" style={{ marginBottom: 24 }}>
+        <div className="exp-header">
+          <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+            <a href="https://www.codekids.org.uk/" target="_blank" rel="noopener noreferrer" aria-label="Code Kids Robotics website">
+              <img src="/Code%20Kids%20Logo.png" alt="Code Kids Robotics" style={{ height: 48, width: 'auto', background: '#fff', borderRadius: 6, padding: 4, display: 'block' }} />
+            </a>
+            <div>
+              <div className="exp-company">Code Kids</div>
+              <div className="exp-role">Part-time Instructor · London, UK</div>
+            </div>
+          </div>
+          <div className="exp-period">Oct 2026 - Present</div>
+        </div>
+        <div className="exp-text">
+          <p>I mentor children aged 8–12 through coding projects and Sphero robotics, helping them understand programming concepts and troubleshoot their work. I coordinate with fellow instructors to deliver classroom activities and support students during practical projects.</p>
+          <p>I am expected to contribute as one of the architects of Code Kids' planned cybersecurity course, drawing on my CTF design and cybersecurity teaching experience.</p>
+        </div>
+      </div>
       <div className="experience-card card-reveal">
         <div className="exp-header">
           <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
@@ -80,10 +99,11 @@ export function Experience() {
               <div className="exp-role">Technical Operations</div>
             </div>
           </div>
-          <div className="exp-period">Nov 2024 - Present</div>
+          <div className="exp-period">Nov 2024 - Sep 2026</div>
         </div>
         <div className="exp-text">
-            <p>CyberArts is a New York-based EdTech startup teaching cybersecurity to high school students through live CTF competitions. I joined as a challenge designer and grew into leading the full technical pipeline, creating 100+ CTF challenges and coaching hundreds of students across the United States.</p>
+            <p>I designed and developed 200+ CTF challenges across web exploitation, reverse engineering, forensics, cryptography and OSINT. I coached four US high-school cohorts and onboarded 200+ students, resolving account, platform and technical-access issues.</p>
+            <p>I worked directly with the founder on cybersecurity teaching materials, coordinating technical content and visual design while balancing challenge development, onboarding and technical support against course-delivery deadlines.</p>
           </div>
       </div>
     </FadeInSection>
@@ -93,10 +113,12 @@ export function Experience() {
 /* ---- PROJECTS ---- */
 export function Projects() {
   const projects = [
-    { title: 'Autonomous AI Agents for Offensive Cybersecurity', role: 'Lead Researcher', tags: ['AI Security', 'Pentesting', 'Research', 'Python'],
-      desc: 'Engineered an AI penetration agent achieving 80-88% exploit success across DVWA, Metasploitable 2, and Juice Shop. Demonstrated 33% faster discovery times and 35+ vulnerabilities vs human pentesters.' },
+    { title: 'BastionAI: Security Workflow Simulation', role: 'Python / Flask', tags: ['Penetration Testing', 'Security Reporting', 'Python', 'Flask'],
+      bullets: ['Built an interactive penetration-testing workflow demonstration with a browser terminal and operator approval prompts, using scripted DVWA and Metasploitable2 scenarios.', 'Implemented HTML reports presenting simulated findings and severity information for the operator.'] },
     { title: 'HackTheFlag CTF Infrastructure', role: 'Technical Lead', tags: ['Cloudflare', 'Azure', 'Docker', 'Kubernetes', 'CTFd'],
-      desc: 'Led operations for HackTheFlag at SRMIST. 20+ custom challenges on Azure with Docker/K8s, 100% uptime. Mitigated a live DDoS attack via Cloudflare WAF.' },
+      bullets: ['Led technical operations with the organising team, coordinating platform support for 150+ participants.', 'Deployed 20+ custom challenges on Azure using Docker, Kubernetes and CTFd. Responded to a live DDoS attack using Cloudflare during the event.'] },
+    { title: 'L.A.N.D.E.R: Lunar Image Processing', role: 'Team Lead', tags: ['Python', 'Flask', 'SRGAN', 'Image Processing'],
+      bullets: ["Led the project team, coordinating members' contributions to the shared lunar-image processing prototype.", 'Contributed to SRGAN image super-resolution in Python and a Flask interface for exploring lunar imagery.'] },
     { title: '3D Object Detection System', role: 'Team Lead (HackHound 2.0)', tags: ['Computer Vision', 'Deep Learning', 'Python', 'YOLO'],
       desc: 'Built in 24 hours at HackHound 2.0. Real-time 3D detection identifying 1,500+ object types. 4th place out of 48 teams (1,100+ participants).' },
   ];
@@ -108,7 +130,11 @@ export function Projects() {
           <div className="project-role">{p.role}</div>
           <div className="project-title">{p.title}</div>
           <div className="project-tags">{p.tags.map(t => <span key={t} className="project-tag">{t}</span>)}</div>
-          <div className="project-desc">{p.desc}</div>
+          {p.bullets ? (
+            <ul className="project-desc" style={{ paddingLeft: 20, margin: 0 }}>
+              {p.bullets.map(bullet => <li key={bullet} style={{ marginTop: 8 }}>{bullet}</li>)}
+            </ul>
+          ) : <div className="project-desc">{p.desc}</div>}
         </div>
       ))}
     </FadeInSection>
@@ -163,9 +189,10 @@ export function Skills() {
   const skillCategories = [
     { category: 'Languages', items: ['Python', 'C', 'C++', 'Java', 'Rust', 'JavaScript', 'HTML/CSS', 'SQL'] },
     { category: 'Security Tools', items: ['Wireshark', 'Burp Suite', 'Ghidra', 'Autopsy', 'theHarvester', 'CTFd', 'ADB', 'Aircrack-ng'] },
+    { category: 'SIEM & Monitoring', items: ['Splunk', 'Wazuh', 'Microsoft Sentinel'] },
     { category: 'Cloud & Infra', items: ['Docker', 'Kubernetes', 'Azure', 'Cloudflare', 'Linux'] },
     { category: 'Frameworks', items: ['Node.js', 'React', 'Flask', 'Git', 'GitHub', 'GitLab'] },
-    { category: 'Practical Training', items: ['HackTheBox'] },
+    { category: 'Practical Training', items: ['HackTheBox', 'Penetration-testing methodology', 'Active Directory testing', 'OSCP-oriented lab practice'] },
   ];
   return (
     <FadeInSection id="skills" className="section">
@@ -204,7 +231,8 @@ export function Education() {
           </div>
           <div className="edu-period">Sep 2026 - Sep 2027 (expected)</div>
         </div>
-        <p className="project-desc">Current MSc student · Class Representative · CyberSoc Member</p>
+        <p className="project-desc">Current MSc student · Class Representative · Imperial CyberSoc CTF Challenge Contributor</p>
+        <p className="project-desc">As class representative, I raise shared coursework questions with professors and relay their clarifications to the cohort. I also contribute practical CTF exercises to Imperial CyberSoc's security community.</p>
         <div className="edu-coursework">
           {['Key Concepts: Security in Context', 'Behavioural Science and Security', 'CBRNE: The Physical Threat Space', 'Infrastructure and Transport Security', 'Behavioural Research Methods', 'Cyber-Physical Systems Security', 'Sensors: Electronic and Natural'].map(c => (
             <span key={c} className="edu-coursework-tag">{c}</span>
