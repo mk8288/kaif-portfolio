@@ -7,21 +7,22 @@
 }
 
 :root {
-  /* Dark theme (default) */
-  --bg-primary: #0a0a0f;
-  --bg-secondary: #12121a;
-  --bg-tertiary: #1a1a2e;
-  --bg-card: #16162a;
-  --text-primary: #f1f1f6;
-  --text-secondary: #a0a0b8;
-  --text-tertiary: #6b6b82;
-  --accent: #dc2626;
-  --accent-light: #ef4444;
-  --accent-glow: rgba(220, 38, 38, 0.3);
-  --accent-muted: rgba(220, 38, 38, 0.12);
-  --border: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(255, 255, 255, 0.16);
-  --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  /* Fixed light appearance with a blue accent. */
+  color-scheme: only light;
+  --bg-primary: #f8f8fc;
+  --bg-secondary: #eef0f7;
+  --bg-tertiary: #e2e4ef;
+  --bg-card: #ffffff;
+  --text-primary: #1a1a2e;
+  --text-secondary: #5a5a72;
+  --text-tertiary: #9090a8;
+  --accent: #2563eb;
+  --accent-light: #3b82f6;
+  --accent-glow: rgba(37, 99, 235, 0.3);
+  --accent-muted: rgba(37, 99, 235, 0.12);
+  --border: rgba(0, 0, 0, 0.08);
+  --border-hover: rgba(0, 0, 0, 0.16);
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
   --radius: 12px;
   --radius-sm: 8px;
   --radius-lg: 20px;
@@ -30,39 +31,6 @@
   --nav-height: 64px;
   --max-width: 1200px;
   --section-gap: 120px;
-}
-
-[data-theme="light"] {
-  --bg-primary: #f8f8fc;
-  --bg-secondary: #eef0f7;
-  --bg-tertiary: #e2e4ef;
-  --bg-card: #ffffff;
-  --text-primary: #1a1a2e;
-  --text-secondary: #5a5a72;
-  --text-tertiary: #9090a8;
-  --border: rgba(0, 0, 0, 0.08);
-  --border-hover: rgba(0, 0, 0, 0.16);
-  --shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-}
-
-/* Accent colors (after theme so it correctly overrides) */
-[data-accent="red"] {
-  --accent: #dc2626; --accent-light: #ef4444; --accent-glow: rgba(220,38,38,0.3); --accent-muted: rgba(220,38,38,0.12);
-}
-[data-accent="green"] {
-  --accent: #16a34a; --accent-light: #22c55e; --accent-glow: rgba(22,163,74,0.3); --accent-muted: rgba(22,163,74,0.12);
-}
-[data-accent="blue"] {
-  --accent: #2563eb; --accent-light: #3b82f6; --accent-glow: rgba(37,99,235,0.3); --accent-muted: rgba(37,99,235,0.12);
-}
-[data-accent="orange"] {
-  --accent: #ea580c; --accent-light: #f97316; --accent-glow: rgba(234,88,12,0.3); --accent-muted: rgba(234,88,12,0.12);
-}
-[data-accent="purple"] {
-  --accent: #9333ea; --accent-light: #a855f7; --accent-glow: rgba(147,51,234,0.3); --accent-muted: rgba(147,51,234,0.12);
-}
-[data-accent="white"] {
-  --accent: #e8e8e8; --accent-light: #ffffff; --accent-glow: rgba(232,232,232,0.25); --accent-muted: rgba(232,232,232,0.10);
 }
 
 html {

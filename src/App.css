@@ -49,15 +49,11 @@
   right: 0;
   z-index: 100;
   height: var(--nav-height);
-  background: rgba(10, 10, 15, 0.85);
+  background: rgba(248, 248, 252, 0.85);
   backdrop-filter: blur(20px) saturate(1.4);
   -webkit-backdrop-filter: blur(20px) saturate(1.4);
   border-bottom: 1px solid var(--border);
   transition: background 0.3s ease, border-color 0.3s ease;
-}
-
-[data-theme="light"] .navbar {
-  background: rgba(248, 248, 252, 0.85);
 }
 
 .navbar-inner {
@@ -112,33 +108,6 @@
 
 .navbar-links a:hover::after {
   width: 100%;
-}
-
-.navbar-right {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-/* Theme Toggle */
-.theme-toggle {
-  background: var(--bg-tertiary);
-  border: 1px solid var(--border);
-  color: var(--text-primary);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-size: 1.1rem;
-  transition: all 0.2s ease;
-}
-
-.theme-toggle:hover {
-  border-color: var(--accent);
-  box-shadow: 0 0 20px var(--accent-glow);
 }
 
 /* Mobile menu toggle */
@@ -365,7 +334,7 @@
 .orbit-ring-3 {
   width: 600px;
   height: 600px;
-  border-color: rgba(220, 38, 38, 0.15);
+  border-color: rgba(37, 99, 235, 0.15);
   border-style: double;
 }
 
@@ -417,7 +386,7 @@
   width: 400px;
   height: 400px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(220, 38, 38, 0.08) 0%, transparent 60%);
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 60%);
   bottom: -100px;
   left: -100px;
   pointer-events: none;

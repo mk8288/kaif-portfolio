@@ -12,14 +12,7 @@ const navItems = [
   { label: 'Contact', href: '#contact' },
 ];
 
-interface NavbarProps {
-  theme: 'dark' | 'light';
-  toggleTheme: () => void;
-  currentAccent: { name: string; hex: string };
-  cycleColor: () => void;
-}
-
-export default function Navbar({ theme, toggleTheme, currentAccent, cycleColor }: NavbarProps) {
+export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -45,7 +38,7 @@ export default function Navbar({ theme, toggleTheme, currentAccent, cycleColor }
           <span className="accent">K</span>aif
         </div>
 
-        <ul className={`navbar-links ${mobileOpen ? 'open' : ''}`}>
+        <ul id="primary-navigation" className={`navbar-links ${mobileOpen ? 'open' : ''}`}>
           {navItems.map((item, i) => (
             <motion.li
               key={item.href}
@@ -60,42 +53,15 @@ export default function Navbar({ theme, toggleTheme, currentAccent, cycleColor }
           ))}
         </ul>
 
-        <div className="navbar-right">
-          <button
-            className="theme-toggle"
-            onClick={cycleColor}
-            aria-label="Cycle accent color"
-            title={`Accent: ${currentAccent.name}`}
-            style={{
-              background: `${currentAccent.hex}22`,
-              borderColor: currentAccent.hex,
-              color: currentAccent.hex,
-              fontSize: '0.65rem',
-              fontWeight: 600,
-              width: 44,
-              letterSpacing: '0.05em',
-            }}
-          >
-            {currentAccent.name}
-          </button>
-
-          <button
-            className="theme-toggle"
-            onClick={toggleTheme}
-            aria-label="Toggle dark/light mode"
-            title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-          >
-            {theme === 'dark' ? '☀️' : '🌙'}
-          </button>
-
-          <button
-            className="mobile-menu-btn"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Toggle menu"
-          >
-            {mobileOpen ? '✕' : '☰'}
-          </button>
-        </div>
+        <button
+          className="mobile-menu-btn"
+          onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label="Toggle menu"
+          aria-expanded={mobileOpen}
+          aria-controls="primary-navigation"
+        >
+          {mobileOpen ? '✕' : '☰'}
+        </button>
       </div>
     </motion.nav>
   );
