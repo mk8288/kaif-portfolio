@@ -46,7 +46,7 @@ export function Journey() {
     { date: '3rd Year @ SRMIST', title: 'Organized AutoCoder Competition', desc: 'Organized a college-level coding competition at SRMIST, managing participants, challenges, and event logistics.' },
     { date: '3rd Year @ SRMIST', title: 'Ethical Hacking Workshop - IIT Delhi', desc: 'Hands-on workshop on WPA2 Wi-Fi auditing with Aircrack-ng, packet capture analysis, and wireless security assessments led by Mohsin Quresh.' },
     { date: 'Nov 2024 - Sep 2026', title: 'Technical Operations @ CyberArts', desc: 'Created 200+ CTF challenges, coached four US student cohorts and onboarded 200+ students. Collaborated with the founder on teaching materials and course delivery.' },
-    { date: 'Sep 2026 - Sep 2027', title: 'MSc @ Imperial College London', desc: 'Studying Security and Resilience: Science and Technology. Represent peers by raising coursework questions with professors and contribute CTF challenges to Imperial CyberSoc.' },
+    { date: 'Sep 2026 - Sep 2027', title: 'MSc @ Imperial College London', desc: 'Studying Security and Resilience: Science and Technology. CTF Challenge Contributor at Imperial CyberSoc since Sep 2026 and Class Representative since Oct 2026.' },
     { date: 'Oct 2026 - Present', title: 'Part-time Instructor @ Code Kids', desc: 'Teach children aged 8–12 through coding and Sphero robotics projects. Coordinate with fellow instructors on classroom activities. Expected to help architect a planned cybersecurity course.' },
   ];
   return (
@@ -113,12 +113,12 @@ export function Experience() {
 /* ---- PROJECTS ---- */
 export function Projects() {
   const projects = [
-    { title: 'BastionAI: Security Workflow Simulation', role: 'Python / Flask', tags: ['Penetration Testing', 'Security Reporting', 'Python', 'Flask'],
-      bullets: ['Built an interactive penetration-testing workflow demonstration with a browser terminal and operator approval prompts, using scripted DVWA and Metasploitable2 scenarios.', 'Implemented HTML reports presenting simulated findings and severity information for the operator.'] },
-    { title: 'HackTheFlag CTF Infrastructure', role: 'Technical Lead', tags: ['Cloudflare', 'Azure', 'Docker', 'Kubernetes', 'CTFd'],
+    { title: 'BastionAI: Security Workflow Application', role: 'Python / Flask · May 2026', tags: ['Web Application', 'Penetration Testing', 'Python', 'Flask'],
+      bullets: ['Built a Python/Flask web application with a browser terminal and operator approval prompts for simulated DVWA and Metasploitable2 testing scenarios.', 'Added HTML report generation to present simulated findings, severity levels and operator-facing results.'] },
+    { title: 'HackTheFlag CTF Infrastructure', role: 'Technical Lead · Aug 2024', tags: ['Cloudflare', 'Azure', 'Docker', 'Kubernetes', 'CTFd'],
       bullets: ['Led technical operations with the organising team, coordinating platform support for 150+ participants.', 'Deployed 20+ custom challenges on Azure using Docker, Kubernetes and CTFd. Responded to a live DDoS attack using Cloudflare during the event.'] },
-    { title: 'L.A.N.D.E.R: Lunar Image Processing', role: 'Team Lead', tags: ['Python', 'Flask', 'SRGAN', 'Image Processing'],
-      bullets: ["Led the project team, coordinating members' contributions to the shared lunar-image processing prototype.", 'Contributed to SRGAN image super-resolution in Python and a Flask interface for exploring lunar imagery.'] },
+    { title: 'L.A.N.D.E.R: Lunar Image Processing', role: 'Team Lead · Oct 2024', tags: ['Python', 'Flask', 'SRGAN', 'Image Processing'],
+      bullets: ["Led the project team, coordinating members' contributions to the shared lunar-image processing prototype.", 'Contributed Python image-processing code and a Flask interface for an SRGAN super-resolution prototype.'] },
     { title: '3D Object Detection System', role: 'Team Lead (HackHound 2.0)', tags: ['Computer Vision', 'Deep Learning', 'Python', 'YOLO'],
       desc: 'Built in 24 hours at HackHound 2.0. Real-time 3D detection identifying 1,500+ object types. 4th place out of 48 teams (1,100+ participants).' },
   ];
@@ -231,8 +231,8 @@ export function Education() {
           </div>
           <div className="edu-period">Sep 2026 - Sep 2027 (expected)</div>
         </div>
-        <p className="project-desc">Current MSc student · Class Representative · Imperial CyberSoc CTF Challenge Contributor</p>
-        <p className="project-desc">As class representative, I raise shared coursework questions with professors and relay their clarifications to the cohort. I also contribute practical CTF exercises to Imperial CyberSoc's security community.</p>
+        <p className="project-desc"><strong>Class Representative · Oct 2026 - Present</strong><br />I raise shared coursework questions with professors and relay their clarifications to the cohort.</p>
+        <p className="project-desc"><strong>Imperial CyberSoc CTF Challenge Contributor · Sep 2026 - Present</strong><br />I contribute practical CTF exercises to the university's security community.</p>
         <div className="edu-coursework">
           {['Key Concepts: Security in Context', 'Behavioural Science and Security', 'CBRNE: The Physical Threat Space', 'Infrastructure and Transport Security', 'Behavioural Research Methods', 'Cyber-Physical Systems Security', 'Sensors: Electronic and Natural'].map(c => (
             <span key={c} className="edu-coursework-tag">{c}</span>

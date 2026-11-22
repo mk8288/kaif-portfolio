@@ -58,13 +58,13 @@ export default function About() {
 
   return (
     <FadeInSection id="about" className="section">
-      <SectionHeader tag="About Me" title={<>Building the next generation of <span className="highlight">cyber defenses</span></>} />
+      <SectionHeader tag="About Me" title={<>Building <span className="highlight">software</span> and testing <span className="highlight">security</span></>} />
 
       <div className="about-grid">
         <div className="about-text">
           <p>
-            I'm Mohammad Kaif, an MSc student working towards a career in security engineering,
-            with experience in CTF development, security monitoring tools and competition
+            I'm Mohammad Kaif, an MSc student seeking graduate roles in software engineering
+            and cybersecurity, with experience in Python and Flask applications, CTF development and cloud
             infrastructure. I graduated with a B.Tech in Computer Science (Cloud Computing) from
             SRM Institute of Science and Technology with a CGPA of 9.04/10.
           </p>

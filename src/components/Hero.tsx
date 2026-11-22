@@ -38,8 +38,8 @@ export default function Hero() {
             Hi, I'm{' '}
             <span className="accent">Mohammad Kaif</span>
             <br />
-            Security Engineer{' '}
-            <span className="accent">&</span> CTF Creator
+            Software Engineering{' '}
+            <span className="accent">&</span> Cybersecurity
           </motion.h1>
 
           <motion.p
@@ -49,9 +49,9 @@ export default function Hero() {
             transition={{ duration: 0.4, delay: 0.35 }}
           >
             Studying MSc Security & Resilience at <span className="accent">Imperial College London</span>.
-            Created 200+ CTF challenges at CyberArts and supported live competition infrastructure.
-            Experience with Splunk, Wazuh and Microsoft Sentinel, alongside ongoing
-            OSCP-oriented Active Directory lab practice. Seeking graduate security engineering opportunities.
+            I build Python applications, create CTF challenges and deploy cloud-hosted competition infrastructure.
+            Seeking graduate roles in software engineering and cybersecurity,
+            including offensive security and red teaming.
           </motion.p>
 
           <motion.div
